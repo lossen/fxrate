@@ -1,0 +1,16 @@
+{
+  "fxRates": [
+    {
+      "currencyFrom": "AED",
+      "currencyTo": "EUR",
+      "fxRate": 3.62,
+      "fees": {"percentage": 1.1, "fixed": 1000}
+    },
+    {
+      "currencyFrom": "AED",
+      "currencyTo": "USD",
+      "fxRate": 0.99,
+      "fees": {"percentage": 1.1, "fixed": 1700}
+    }
+  ]
+}
