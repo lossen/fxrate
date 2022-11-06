@@ -1,4 +1,4 @@
-package com.testfxrate;
+package com.TestFxRate;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
