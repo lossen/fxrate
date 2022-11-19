@@ -1,8 +1,15 @@
 import React, { FC } from "react";
-import { View } from "react-native";
+import Amount from "./Amount";
+import CurrencySwitcher from "./CurrencySwitcher";
+import Card from "../layout/Card";
 
-const ConvertFromCurrencyCard: FC = () => {
-  return <View></View>;
+const RateSwitcherItem: FC = () => {
+  return (
+    <Card>
+      <CurrencySwitcher />
+      <Amount />
+    </Card>
+  );
 };
 
-export default ConvertFromCurrencyCard;
+export default RateSwitcherItem;
