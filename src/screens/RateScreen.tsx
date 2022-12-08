@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { Text, View } from "react-native";
 import Button from "../components/Button";
-import ConvertToCurrencyCard from "../components/ConvertToCurrencyCard";
+import ConvertToCurrencyCard from "../components/ConvertToCurrencyCard/ConvertToCurrencyCard";
 import Header from "../layout/Header";
-import ConvertFromCurrencyCard from "../components/ConvertFromCurrencyCard";
+import ConvertFromCurrencyCard from "../components/ConvertFromCurrencyCard/ConvertFromCurrencyCard";
 import { useData } from "../providers/DataProvider";
 import { styles } from "../styles";
 import Loading from "../components/Loading";

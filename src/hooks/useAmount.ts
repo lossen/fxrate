@@ -16,8 +16,8 @@ export const useAmount = () => {
     []
   );
   const getTotalAmount = useCallback(
-    (currentAmount: number, percentage: number) => {
-      return currentAmount + getFeeAmount(currentAmount, percentage);
+    (currentAmount: number, feeAmount: number) => {
+      return currentAmount + feeAmount;
     },
     []
   );

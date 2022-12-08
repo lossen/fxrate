@@ -12,8 +12,9 @@ import React, {
 } from "react";
 import { ICurrencyItem, IFeeItem, TCurrency } from "../types";
 import { currencies } from "../mockApi/currencies.json";
-import { fxRates } from "../mockApi/fxRates.json";
 import { useAmount } from "../hooks/useAmount";
+import { useCurrencies } from "../hooks/useCurrencies";
+import { useFees } from "../hooks/useFees";
 
 export const DataContext = createContext<IDataContext>({} as IDataContext);
 export const useData = () => useContext(DataContext);
@@ -23,29 +24,16 @@ export const DataProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [currentAmount, setCurrentAmount] = useState<number>(0);
 
   const [currentFee, setCurrentFee] = useState<IFeeItem | null>(null);
+  const [feeAmount, setFeeAmount] = useState<number>(0);
   const [currentCurrency, setCurrentCurrency] = useState<TCurrency>("USD");
   const [totalAmount, setTotalAmount] = useState<number>(0);
 
   const [currenciesList, setCurrenciesList] = useState<ICurrencyItem[]>([]);
 
   const [fees, setFees] = useState<IFeeItem[]>([]);
-  const { getTotalAmount } = useAmount();
-
-  const getCurrencies = useCallback(() => {
-    return new Promise((resolve) =>
-      setTimeout(() => {
-        resolve(currencies);
-      }, 3000)
-    );
-  }, [currencies.length]);
-
-  const getFees = useCallback(() => {
-    return new Promise((resolve) =>
-      setTimeout(() => {
-        resolve(fxRates);
-      }, 3000)
-    );
-  }, [fxRates.length]);
+  const { getTotalAmount, getFeeAmount } = useAmount();
+  const { getCurrencies } = useCurrencies();
+  const { getFees } = useFees();
 
   const getData = useCallback(async () => {
     setIsLoading(true);
@@ -68,12 +56,17 @@ export const DataProvider: FC<{ children: ReactNode }> = ({ children }) => {
   }, [currentCurrency, currenciesList.length, fees.length]);
 
   useEffect(() => {
-    const totalAmount =
-      currentFee?.fees.percentage && currentAmount
-        ? getTotalAmount(currentAmount, currentFee.fees.percentage)
-        : 0;
-    setTotalAmount(totalAmount);
-  }, [currentAmount, currentFee, currentCurrency]);
+    if (currentFee?.fees.percentage && currentAmount) {
+      const feeAmount = getFeeAmount(currentAmount, currentFee.fees.percentage);
+      console.log(
+        "🚀 ~ file: DataProvider.tsx ~ line 76 ~ useEffect ~ feeAmount",
+        feeAmount
+      );
+      const totalAmount = getTotalAmount(currentAmount, feeAmount);
+      setFeeAmount(feeAmount);
+      setTotalAmount(totalAmount);
+    }
+  }, [currentAmount, currentFee, currentCurrency, fees.length]);
 
   const value = useMemo(
     () => ({
@@ -88,6 +81,7 @@ export const DataProvider: FC<{ children: ReactNode }> = ({ children }) => {
       setTotalAmount,
       setCurrentCurrency,
       isLoading,
+      feeAmount,
     }),
     [
       currentAmount,
@@ -114,4 +108,5 @@ interface IDataContext {
   setTotalAmount: Dispatch<SetStateAction<number>>;
   setCurrentCurrency: Dispatch<SetStateAction<TCurrency>>;
   isLoading: boolean;
+  feeAmount: number;
 }

@@ -1,10 +1,10 @@
 import React, { FC, useCallback, useContext } from "react";
 import { Pressable, Text, View } from "react-native";
-import { styles } from "../styles";
-import { TCurrency } from "../types";
+import { styles } from "../../styles";
+import { TCurrency } from "../../types";
 import Icon from "react-native-vector-icons/FontAwesome";
-import { colors } from "../constants";
-import { DataContext } from "../providers/DataProvider";
+import { colors } from "../../constants";
+import { DataContext } from "../../providers/DataProvider";
 
 const CurrencySwitcher: FC = () => {
   const { currencies, setCurrentCurrency, currentCurrency } =

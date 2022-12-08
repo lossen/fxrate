@@ -1,9 +1,11 @@
 import { View, Text, TextInput } from "react-native";
 import React, { FC, useCallback } from "react";
-import { styles } from "../styles";
-import { useAmount } from "../hooks/useAmount";
-import { colors } from "../constants";
-import { useData } from "../providers/DataProvider";
+import { styles } from "../../styles";
+import { useAmount } from "../../hooks/useAmount";
+import { colors } from "../../constants";
+import { useData } from "../../providers/DataProvider";
+import FeeAmount from "./FeeAmount";
+import TotalAmount from "./TotalAmount";
 
 const Amount: FC = () => {
   const {
@@ -12,6 +14,7 @@ const Amount: FC = () => {
     currentFee,
     totalAmount,
     currentCurrency,
+    feeAmount,
   } = useData();
 
   const { getValidNumberAmount } = useAmount();
@@ -25,7 +28,6 @@ const Amount: FC = () => {
     [currentAmount]
   );
 
-  const calcFeeAmount = (totalAmount - currentAmount).toFixed();
   return (
     <View style={styles.amountColumn}>
       <TextInput
@@ -38,12 +40,11 @@ const Amount: FC = () => {
       ></TextInput>
       {currentFee && currentFee.fees ? (
         <>
-          <Text
-            style={[styles.smallText, styles.violetText]}
-          >{`Fee (incl.VAT): ${currentCurrency} ${calcFeeAmount}`}</Text>
-          <Text
-            style={[styles.smallText, styles.greenText]}
-          >{`Total to pay: ${currentCurrency} ${totalAmount.toFixed(2)}`}</Text>
+          <FeeAmount feeAmount={feeAmount} currentCurrency={currentCurrency} />
+          <TotalAmount
+            currentCurrency={currentCurrency}
+            totalAmount={totalAmount}
+          />
         </>
       ) : null}
     </View>

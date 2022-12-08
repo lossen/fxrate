@@ -1,22 +1,22 @@
 import { useCallback, useEffect, useMemo } from "react";
-import { currencies } from "../mockApi/currencies.json";
+import { fxRates } from "../mockApi/fxRates.json";
 
-export const useCurrencies = () => {
-  const getCurrencies = useCallback(() => {
+export const useFees = () => {
+  const getFees = useCallback(() => {
     return new Promise((resolve) =>
       setTimeout(() => {
-        resolve(currencies);
+        resolve(fxRates);
       }, 3000)
     );
   }, []);
 
   useEffect(() => {
-    getCurrencies();
+    getFees();
   }, []);
 
   return useMemo(
     () => ({
-      getCurrencies,
+      getFees,
     }),
     []
   );

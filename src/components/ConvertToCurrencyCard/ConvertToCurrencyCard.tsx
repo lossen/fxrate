@@ -1,9 +1,9 @@
 import { View, Text } from "react-native";
 import React, { FC, useEffect, useState } from "react";
-import { styles } from "../styles";
-import { TCurrency } from "../types";
-import Card from "../layout/Card";
-import { useData } from "../providers/DataProvider";
+import { styles } from "../../styles";
+import { TCurrency } from "../../types";
+import Card from "../../layout/Card";
+import { useData } from "../../providers/DataProvider";
 
 const ConvertToCurrencyCard: FC = () => {
   const { currentCurrency, totalAmount, currentFee } = useData();
