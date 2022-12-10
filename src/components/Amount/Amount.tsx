@@ -10,7 +10,7 @@ import TotalAmount from "./TotalAmount";
 const Amount: FC = () => {
   const {
     setCurrentAmount,
-    currentAmount,
+    currentAmount = 0,
     currentFee,
     totalAmount,
     currentCurrency,

@@ -58,10 +58,6 @@ export const DataProvider: FC<{ children: ReactNode }> = ({ children }) => {
   useEffect(() => {
     if (currentFee?.fees.percentage && currentAmount) {
       const feeAmount = getFeeAmount(currentAmount, currentFee.fees.percentage);
-      console.log(
-        "🚀 ~ file: DataProvider.tsx ~ line 76 ~ useEffect ~ feeAmount",
-        feeAmount
-      );
       const totalAmount = getTotalAmount(currentAmount, feeAmount);
       setFeeAmount(feeAmount);
       setTotalAmount(totalAmount);

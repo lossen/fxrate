@@ -9,6 +9,7 @@ import { DataContext } from "../../providers/DataProvider";
 const CurrencySwitcher: FC = () => {
   const { currencies, setCurrentCurrency, currentCurrency } =
     useContext(DataContext);
+  if (!currencies) return null;
 
   const handleChangeCurrency = useCallback(() => {
     //todo popup

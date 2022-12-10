@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import Button from "../components/Button";
 import ConvertToCurrencyCard from "../components/ConvertToCurrencyCard/ConvertToCurrencyCard";
 import Header from "../layout/Header";

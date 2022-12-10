@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RateScreen should match snapshot 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#fff",
+      "flex": 1,
+      "flexDirection": "column",
+      "padding": 16,
+      "paddingBottom": 0,
+      "paddingTop": 56,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginBottom": 24,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "color": "#B69FFB",
+          "fontSize": 16,
+          "fontWeight": "700",
+          "letterSpacing": 0.4,
+        }
+      }
+    >
+      Rates
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "flex-start",
+          "backgroundColor": "#fff",
+          "borderRadius": 8,
+          "elevation": 12,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 40,
+          "paddingBottom": 24,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 24,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 2,
+            "width": 2,
+          },
+          "shadowOpacity": 0.1,
+          "shadowRadius": 3.84,
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "alignItems": "flex-end",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <TextInput
+          keyboardType="numbers-and-punctuation"
+          onChangeText={[Function]}
+          placeholder="0"
+          placeholderTextColor="#000"
+          style={
+            {
+              "color": "#000",
+              "fontSize": 16,
+              "fontWeight": "700",
+              "height": 24,
+              "textAlign": "right",
+            }
+          }
+          value="0"
+        />
+      </View>
+    </View>
+    <View
+      style={
+        {
+          "alignItems": "flex-start",
+          "backgroundColor": "#fff",
+          "borderRadius": 8,
+          "elevation": 12,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 40,
+          "paddingBottom": 24,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 24,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 2,
+            "width": 2,
+          },
+          "shadowOpacity": 0.1,
+          "shadowRadius": 3.84,
+        }
+      }
+    >
+      <View>
+        <Text
+          style={
+            {
+              "color": "#484848",
+              "fontSize": 16,
+              "fontWeight": "700",
+              "height": 24,
+              "paddingRight": 10,
+            }
+          }
+        >
+          EUR
+        </Text>
+      </View>
+      <View>
+        <Text
+          style={
+            {
+              "color": "#000",
+              "fontSize": 16,
+              "fontWeight": "700",
+              "height": 24,
+              "textAlign": "right",
+            }
+          }
+        >
+          0
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    accessibilityState={
+      {
+        "disabled": false,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#4680FD",
+        "borderRadius": 8,
+        "flexDirection": "row",
+        "height": 64,
+        "justifyContent": "center",
+        "marginBottom": 24,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "color": "#fff",
+          "fontSize": 24,
+          "fontWeight": "700",
+          "letterSpacing": 0.4,
+          "lineHeight": 28,
+        }
+      }
+    >
+      Next
+    </Text>
+  </View>
+</View>
+`;
